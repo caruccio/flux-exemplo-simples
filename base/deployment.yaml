@@ -1,0 +1,24 @@
+##
+## Vamos alterar os campos spec.replicas e spec.containers.image de acordo com o ambiente que vamos fazer o deploy
+##
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+  namespace: app
+spec:
+  replicas: 0       ## esse é um valor base para ser alterado pelos overlays
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx:latest   ### tambem vamos mudar a tag da imagem de acordo com o ambiente que vai rodar esse deployment
+        name: nginx           ### pra selecionar o container é necessario passar o nome dele também

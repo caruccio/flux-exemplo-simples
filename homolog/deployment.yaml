@@ -1,0 +1,12 @@
+apiVersion: apps/v1  ###
+kind: Deployment       #
+metadata:              # Esses 4 campos são necessários pra identificar qual objeto vai receber o overlay/sobreposição
+  name: nginx          #
+  namespace: app     ###
+spec:
+  replicas: 2              ### homolog precisa de 3 replicas
+  template:
+    spec:
+      containers:
+      - image: nginx:v2.0  ### vamos homologar a versao v2.0
+        name: nginx
