@@ -1,4 +1,4 @@
-# Example de como usar o flux para aplicar manifestos em ambientes diferentes
+# Examplo de como usar o flux para aplicar manifestos em ambientes diferentes
 
 Para gerar os manifestos para os diferentes ambientes, execute:
 
